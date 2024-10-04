@@ -11,7 +11,10 @@ function ToDoList() {
     }
 
     function addTask() {
-
+        if(newTask.trim() !== "") // If the newTask (The text in the input field) does not equal an empty string, add the task
+            // Updating the tasks with the new task - task is represented as "t"
+            setTasks(t => [...t, newTask]);
+            setNewTask(""); // The input field is cleared after the task is added
     }
 
     function deleteTask(index) {
