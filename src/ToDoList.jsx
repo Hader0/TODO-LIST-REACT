@@ -33,7 +33,12 @@ function ToDoList() {
     }
 
     function moveTaskDown(index) {
-
+        if (index < tasks.length - 1) {
+            const updatedTasks = [...tasks];
+            // Array destructuring to swap two elements within an array
+            [updatedTasks[index], updatedTasks[index + 1]] = [updatedTasks[index + 1], updatedTasks[index]];
+            setTasks(updatedTasks);
+        }
     }
 
     return(
